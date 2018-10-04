@@ -1,4 +1,4 @@
-package tech.maret.Bookstore;
+package tech.maret.bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

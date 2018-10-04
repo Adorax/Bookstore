@@ -1,4 +1,4 @@
-package tech.maret.Bookstore;
+package tech.maret.bookstore;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

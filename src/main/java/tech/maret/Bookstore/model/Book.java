@@ -1,11 +1,28 @@
-package model;
+package tech.maret.bookstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.GenerationType;
+
+@Entity
 public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	long id;
 	String title;
 	String author;
 	String year;
 	String isbn;
 	double price;
+	
+	public Book(String title, String author, String year, String isbn, double price) {
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.isbn = isbn;
+		this.price = price;
+	}
 	
 	public String getTitle() {
 		return title;
