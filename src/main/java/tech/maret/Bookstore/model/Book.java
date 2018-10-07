@@ -3,35 +3,42 @@ package tech.maret.bookstore.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.GenerationType;
 
 @Entity
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	long id;
+	long idB;
 	String title;
 	String author;
 	String year;
 	String isbn;
 	double price;
 	
+	@ManyToOne
+	@JoinColumn(name="idC")
+	Category category;
+	
 	public Book() {} ;
 	
-	public Book(String title, String author, String year, String isbn, double price) {
+	public Book(String title, String author, String year, String isbn, double price, Category category) {
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		this.isbn = isbn;
 		this.price = price;
+		this.category = category;
 	}
 	
-	public long getId() {
-		return id;
+	public long getIdB() {
+		return idB;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdB(long idB) {
+		this.idB = idB;
 	}
 
 	public String getTitle() {
@@ -64,6 +71,13 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
 }

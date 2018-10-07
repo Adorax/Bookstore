@@ -17,7 +17,11 @@
 				<label for="isbn">Isbn:</label>
 				<input type="text" id="isbn" th:field="*{isbn}" />
 				<label for="price">Price:</label>
-				<input type="text" id="price" th:field="*{price}" />				
+				<input type="text" id="price" th:field="*{price}" />
+				<label for="catlist">Category:</label>
+				<select id=""catlist"" th:field="*{category}" class="form-control">
+					<option th:each="category: ${category}" th:value="${category.idC}" th:text="${category.name}"></option>
+				</select>				
 				<input type="submit" value="Save"></input>
 			</form>
 		</div>
