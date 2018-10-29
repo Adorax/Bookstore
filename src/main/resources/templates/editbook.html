@@ -8,6 +8,7 @@
 		
 		<div>
 			<form th:object="${book}" th:action="@{/update/{id}(id=${book.idB})}" action="#" method="post">
+				
 				<label for="title">Title:</label>
 				<input type="text" id="title" th:field="*{title}" th:text="*{title}" />
 				<label for="author">Author:</label>
